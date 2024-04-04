@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PicklyBoo - Database Interface</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #C1D72E; /* Pickle green */
+            color: #333; /* Dark gray text */
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #66b22d; /* Darker pickle green */
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            color: #FFF; /* White text */
+        }
+
+        nav {
+            background-color: #9EDD6E; /* Lighter pickle green */
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333; /* Dark gray text */
+            padding: 5px 10px;
+            border-radius: 5px;
+            background-color: #FFF; /* White background */
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #F4F4F4; /* Light gray background on hover */
+        }
+
+        img {
+            height: 200px;
+            aspect-ratio: 1/1;
+            object-fit:scale-down;
+        }
+
+        .logo {
+            height: 800px;
+            aspect-ratio: 1/1;
+            object-fit:scale-down;
+        }
+
+        .container {
+            background-color: #C1D72E;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table th, table td {
+            border: 1px solid #ddd; /* Light gray border */
+            padding: 8px;
+            text-align: left;
+        }
+
+        table th {
+            background-color: #F4F4F4; /* Light gray background */
+        }
+
+        table tr:nth-child(even) {
+            background-color: #f2f2f2; /* Light gray alternate row background */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>PicklyBoo - Database Interface</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#" onclick="openTab('home')">Home</a></li>
+            <li><a href="#" onclick="openTab('departments')">Departments</a></li>
+            <li><a href="#" onclick="openTab('employees')">Employees</a></li>
+            <li><a href="#" onclick="openTab('projects')">Projects</a></li>
+            <li><a href="#" onclick="openTab('tasks')">Tasks</a></li>
+            <li><a href="#" onclick="openTab('customers')">Customers</a></li>
+            <li><a href="#" onclick="openTab('products')">Products</a></li>
+            <li><a href="#" onclick="openTab('orders')">Orders</a></li>
+            <!-- Add more tabs for other tables if needed -->
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div id="home" class="tab-content active">
+            <h2>Welcome to PicklyBoo Database Interface</h2>
+            <p>Explore various aspects of PicklyBoo business operations using the tabs above.</p>
+            <img class ="logo" src="Images/logo.jpeg"alt="$Logo"></td>
+        </div>
+
+        <div id="departments" class="tab-content">
+            <h2>Department List</h2>
+            <table id="departmentsTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Location</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- department data will be inserted here dynamically -->
+                </tbody>
+            </table>
+        </div>
+        <div id="employees" class="tab-content">
+            <h2>Employee List</h2>
+            <table id="employeesTable">
+                <thead>
+                    <tr>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Employee data will be inserted here dynamically -->
+                </tbody>
+            </table>
+        </div>
+        <div id="customers" class="tab-content">
+            <h2>Customer List</h2>
+            <table id="customersTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone Number</th>
+                        <th>Address</th>
+                        <!-- Add more columns if needed -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Employee data will be inserted here dynamically -->
+                </tbody>
+            </table>
+        </div>
+        <div id="projects" class="tab-content">
+            <h2>Project List</h2>
+            <table id="projectsTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Start date</th>
+                        <th>End date</th>
+                        <th>Department Name</th>
+                        <th>Manager ID</th>
+                        <!-- Add more columns if needed -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Employee data will be inserted here dynamically -->
+                </tbody>
+            </table>
+        </div>
+        <div id="tasks" class="tab-content">
+            <h2>Task List</h2>
+            <table id="tasksTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Status</th>
+                        <th>Priority</th>
+                        <th>Due date</th>
+                        <th>Project Name</th>
+                        <th>Employee ID</th>
+                        <!-- Add more columns if needed -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Task data will be inserted here dynamically -->
+                </tbody>
+            </table>
+        </div>
+        <div id="products" class="tab-content">
+            <h2>Product List</h2>
+            <table id="productsTable">
+                <thead>
+                    <tr>
+                        <!-- Add more columns if needed -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Product data will be inserted here dynamically -->
+                </tbody>
+            </table>
+        </div>
+        <!-- Add more tab content divs for other tables if needed -->
+
+    </div>
+
+    <script>
+        function openTab(tabName) {
+            var i, tabContent;
+            tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].style.display = "none";
+            }
+            document.getElementById(tabName).style.display = "block";
+            fetchData(tabName);
+        }
+
+        function fetchData(tabName) {
+            if (tabName === 'departments') {
+                fetch('fetch_departments.php')
+                    .then(response => response.json())
+                    .then(data => {
+                        const tableBody = document.querySelector(`#${tabName}Table tbody`);
+                        tableBody.innerHTML = '';
+                        data.forEach(department => {
+                            const row = tableBody.insertRow();
+                            row.innerHTML = `
+                                <td>${department.dept_name}</td>
+                                <td>${department.location}</td>
+                            `;
+                        });
+                    })
+                    .catch(error => console.error('Error fetching department data:', error));
+            } else if (tabName === 'employees') {
+                fetch('fetch_employees.php')
+                    .then(response => response.json())
+                    .then(data => {
+                        const tableBody = document.querySelector(`#${tabName}Table tbody`);
+                        tableBody.innerHTML = '';
+                        data.forEach(employee => {
+                            const row = tableBody.insertRow();
+                            row.innerHTML = `
+                                <td>${employee.emp_name}</td>
+                                <img src="Images/${getProductImage(employee.emp_name)}" alt="${employee.emp_name}"></td>
+                            `;
+                        });
+                    })
+                    .catch(error => console.error('Error fetching employee data:', error));
+            } else if (tabName === 'customers') {
+                fetch('fetch_customers.php')
+                    .then(response => response.json())
+                    .then(data => {
+                        const tableBody = document.querySelector(`#${tabName}Table tbody`);
+                        tableBody.innerHTML = '';
+                        data.forEach(customer => {
+                            const row = tableBody.insertRow();
+                            row.innerHTML = `
+                                <td>${customer.cust_id}</td>
+                                <td>${customer.cust_name}</td>
+                                <td>${customer.cust_email}</td>
+                                <td>${customer.cust_phone_number}</td>
+                                <td>${customer.cust_address}</td>
+                            `;
+                        });
+                    })
+                    .catch(error => console.error('Error fetching customer data:', error));
+            } else if (tabName === 'projects') {
+                fetch('fetch_projects.php')
+                    .then(response => response.json())
+                    .then(data => {
+                        const tableBody = document.querySelector(`#${tabName}Table tbody`);
+                        tableBody.innerHTML = '';
+                        data.forEach(project => {
+                            const row = tableBody.insertRow();
+                            row.innerHTML = `
+                                <td>${project.project_name}</td>
+                                <td>${project.start_date}</td>
+                                <td>${project.end_date}</td>
+                                <td>${project.dept_name}</td>
+                                <td>${project.manager_id}</td>
+                            `;
+                        });
+                    })
+                    .catch(error => console.error('Error fetching project data:', error));
+            } else if (tabName === 'tasks') {
+                fetch('fetch_tasks.php')
+                    .then(response => response.json())
+                    .then(data => {
+                        const tableBody = document.querySelector(`#${tabName}Table tbody`);
+                        tableBody.innerHTML = '';
+                        data.forEach(task => {
+                            const row = tableBody.insertRow();
+                            row.innerHTML = `
+                                <td>${task.task_id}</td>
+                                <td>${task.task_name}</td>
+                                <td>${task.task_status}</td>
+                                <td>${task.priority}</td>
+                                <td>${task.due_date}</td>
+                                <td>${task.project_name}</td>
+                                <td>${task.emp_id}</td>
+                                <!-- Add more cells if needed -->
+                            `;
+                        });
+                    })
+                    .catch(error => console.error('Error fetching task data:', error));
+            } if (tabName === 'products') {
+                fetch('fetch_products.php')
+                    .then(response => response.json())
+                    .then(data => {
+                        const tableBody = document.querySelector(`#${tabName}Table tbody`);
+                        tableBody.innerHTML = '';
+                        data.forEach(product => {
+                            const row = tableBody.insertRow();
+                            row.innerHTML = `
+                                <td>${product.product_name}</td>
+                                <img src="Images/${getProductImage(product.product_name)}" alt="${product.product_name}"></td>
+                                <td>${product.price}</td>
+                            `;
+                        });
+                    })
+                    .catch(error => console.error('Error fetching product data:', error));
+            }
+            // Add more conditions to handle other tables if needed
+        }
+
+        window.addEventListener('load', () => {
+            const activeTab = document.querySelector('.tab-content.active');
+            if (activeTab) {
+                fetchData(activeTab.id);
+            }
+        });
+        function getProductImage(productName) {
+            // Convert product name to a format suitable for image file names
+            const imageName = productName.toLowerCase().replace(/\s/g, '_') + '.jpeg';
+            // Return the image name
+            return imageName;
+}
+    </script>
+</body>
+</html>
