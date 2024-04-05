@@ -5,4 +5,4 @@ FROM nginx:alpine
 COPY FrontEnd.html /usr/share/nginx/html
 
 # Expose port 80 to allow outside access
-EXPOSE 3306
+EXPOSE 80
